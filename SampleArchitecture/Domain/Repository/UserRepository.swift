@@ -1,5 +1,5 @@
 //
-//  Service.swift
+//  UserRepository.swift
 //  SampleArchitecture
 //
 //  Created by user on 07.11.2019.
@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+
+protocol UserRepository {
+    func getData() -> Observable<[User]>
+}

@@ -10,10 +10,13 @@ import Foundation
 import RxSwift
 
 class FetchDataUseCase  {
+    let userService : UserService
     
-    func execute () -> Observable<String> {
-        print("executed")
-        return Observable.just("Hello world")
+    init(userService : UserService) {
+        self.userService = userService
     }
     
+    func execute () -> Observable<[User]> {
+        return userService.getData()
+    }
 }

@@ -7,3 +7,27 @@
 //
 
 import Foundation
+import RxSwift
+
+protocol MainViewModelInput {
+    func viewDidLoad()
+}
+
+protocol MainViewModelOutput {
+    var title: PublishSubject<String> { get }
+}
+
+class MainViewModel: MainViewModelInput, MainViewModelOutput {
+    var title: PublishSubject<String> = PublishSubject<String>()
+    let fetchDataUseCase: FetchDataUseCase
+
+    init(fetchDataUseCase: FetchDataUseCase) {
+        self.fetchDataUseCase = fetchDataUseCase
+    }
+
+    func viewDidLoad() {
+        fetchDataUseCase.execute()
+                .map { _ in "completed"}
+                .subscribe(self.title)
+    }
+}
