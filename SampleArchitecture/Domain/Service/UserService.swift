@@ -7,5 +7,5 @@ import Foundation
 import RxSwift
 
 protocol UserService {
-    func getData() -> Observable<[User]>
+    func getUsers() -> Observable<[User]>
 }

@@ -9,14 +9,19 @@
 import Foundation
 import RxSwift
 
-class FetchDataUseCase  {
-    let userService : UserService
-    
-    init(userService : UserService) {
+class FetchDataUseCase {
+    let userService: UserService
+
+    init(userService: UserService) {
         self.userService = userService
     }
-    
-    func execute () -> Observable<[User]> {
-        return userService.getData()
+
+    func execute() -> Observable<[User]> {
+        userService.getUsers()
+                .do(onNext: { users in
+                    for user in users {
+                        print(user.userTitle)
+                    }
+                })
     }
 }

@@ -23,8 +23,13 @@ extension SwinjectStoryboard {
         let remoteUserRepository = "RemoteUserRepository"
         let realmUserRepository = "RealmUserRepository"
 
+        //        MARK: Network
+        defaultContainer.register(RxMoyaProvider.self) { _ in RxMoyaProvider<UserAPIService>()}
+
         //        MARK: Repo
-        defaultContainer.register(UserRepository.self, name: remoteUserRepository) { _ in RemoteUserRepository()}
+        defaultContainer.register(UserRepository.self, name: remoteUserRepository) { resolver in
+            RemoteUserRepository(rxMoyaProvider: resolver.resolve(RxMoyaProvider.self)!)
+        }
         defaultContainer.register(UserRepository.self, name: realmUserRepository) { _ in RealmUserRepository()}
 
         //        MARK: Service

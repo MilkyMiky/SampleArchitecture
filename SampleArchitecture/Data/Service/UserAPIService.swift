@@ -14,15 +14,11 @@ enum UserAPIService {
 }
 
 extension UserAPIService: TargetType {
-    var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
-    }
-    
-    var baseURL: URL { return URL(string: "https://jsonplaceholder.typicode.com/todos")!}
-    
+    var baseURL: URL { URL(string: "https://jsonplaceholder.typicode.com")!}
+    var headers: [String : String]? { ["Content-Type": "application/json"] }
     var path : String {
         switch self {
-            case .getUsers: return ""
+            case .getUsers: return "/todos"
         }
     }
     

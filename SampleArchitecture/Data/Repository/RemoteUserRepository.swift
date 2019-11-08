@@ -8,24 +8,28 @@
 
 import Foundation
 import RxSwift
-import Moya
 
 class RemoteUserRepository: UserRepository {
 
-    private let provider = MoyaProvider<UserAPIService>()
+    let rxMoyaProvider : RxMoyaProvider<UserAPIService>
 
-    func getData() -> Observable<[User]> {
-        return provider.rx
+    init(rxMoyaProvider: RxMoyaProvider<UserAPIService>) {
+        self.rxMoyaProvider = rxMoyaProvider
+    }
+
+    func getUsers() -> Observable<[User]> {
+        rxMoyaProvider
                 .request(.getUsers)
                 .map {
                     try JSONDecoder().decode([User].self, from: $0.data)
                 }
-//                .do(onNext: { users in for user in users {
-//                    print(user.userTitle)
-//                } })
                 .asObservable()
                 .catchError {
                     Observable.error($0)
                 }
+    }
+
+    func saveUsers(users: [User]) -> Completable {
+        fatalError("saveUsers() has not been implemented")
     }
 }
