@@ -11,23 +11,31 @@ import RxSwift
 
 protocol MainViewModelInput {
     func viewDidLoad()
+    func cellClicked(userData: UserData)
 }
 
 protocol MainViewModelOutput {
-    var title: PublishSubject<String> { get }
+    var dataList: PublishSubject<[UserData]> { get }
 }
 
 class MainViewModel: MainViewModelInput, MainViewModelOutput {
-    var title: PublishSubject<String> = PublishSubject<String>()
+    var dataList: PublishSubject<[UserData]> = PublishSubject<[UserData]>()
     let fetchDataUseCase: FetchDataUseCase
+    let markDataUseCase: MarkDataUseCase
 
-    init(fetchDataUseCase: FetchDataUseCase) {
+    init(fetchDataUseCase: FetchDataUseCase, markDataUseCase: MarkDataUseCase) {
         self.fetchDataUseCase = fetchDataUseCase
+        self.markDataUseCase = markDataUseCase
     }
 
     func viewDidLoad() {
         fetchDataUseCase.execute()
-                .map { _ in "completed"}
-                .subscribe(self.title)
+                .subscribe(self.dataList)
+    }
+
+    func cellClicked(userData : UserData) {
+        markDataUseCase.execute(dataId: userData.userDataId, completed: !userData.completed)
+                .do(onNext: { data in print(data.completed) })
+                .subscribe()
     }
 }

@@ -8,13 +8,29 @@
 import Swinject
 import SwinjectStoryboard
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    let realmSchemaVersion : UInt64 = 1
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        configureRealm()
         return true
+    }
+
+    private  func configureRealm() {
+        let configuration = Realm.Configuration(
+                schemaVersion: realmSchemaVersion,
+                migrationBlock: { migration, oldSchemaVersion in
+                    if oldSchemaVersion < self.realmSchemaVersion {
+                        print("Update Realm DB")
+                    }
+                }
+        )
+        Realm.Configuration.defaultConfiguration = configuration
+//        let realm = try! Realm()
     }
 }
 
@@ -44,10 +60,16 @@ extension SwinjectStoryboard {
         defaultContainer.register(FetchDataUseCase.self) { resolver in
             FetchDataUseCase(userService: resolver.resolve(UserService.self)!)
         }
+        defaultContainer.register(MarkDataUseCase.self) { resolver in
+            MarkDataUseCase(userService: resolver.resolve(UserService.self)!)
+        }
 
         //        MARK: ViewModel
         defaultContainer.register(MainViewModel.self) { resolver in
-            MainViewModel(fetchDataUseCase: resolver.resolve(FetchDataUseCase.self)!)
+            MainViewModel(
+                    fetchDataUseCase: resolver.resolve(FetchDataUseCase.self)!,
+                    markDataUseCase: resolver.resolve(MarkDataUseCase.self)!
+            )
         }
 
         //        MARK: View

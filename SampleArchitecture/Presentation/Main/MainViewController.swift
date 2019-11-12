@@ -7,28 +7,45 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MainViewController: UIViewController {
+    @IBOutlet private var tableView: UITableView!
 
-    var viewModel : MainViewModel?
-    
-    @IBOutlet private weak var label: UILabel!
-    
+    var viewModel: MainViewModel?
+    private var userList = [UserData]()
+    private let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if let viewModel = viewModel {
-            bind(to: viewModel)
+            bindTo(to: viewModel)
+            setupCellTapHandling(viewModel: viewModel)
             viewModel.viewDidLoad()
         }
     }
-    
-    func bind(to viewModel: MainViewModel) {
-        viewModel.title
-            .subscribe(
-                onNext: { self.label?.text = $0 },
-                onError: { _ in print("error")}
-        )
+
+    func bindTo(to viewModel: MainViewModel) {
+        viewModel.dataList
+                .bind(
+                        to: tableView.rx.items(cellIdentifier: MainTableViewCell.Identifier,
+                                cellType: MainTableViewCell.self)
+                ) {
+                    row, userData, cell in
+                    cell.setUserData(userData: userData)
+                }
+                .disposed(by: disposeBag)
     }
 
+    func setupCellTapHandling(viewModel: MainViewModel) {
+        tableView.rx
+                .modelSelected(UserData.self)
+                .subscribe(onNext: { [unowned self] userData in
+                    viewModel.cellClicked(userData: userData)
+                })
+                .disposed(by: disposeBag)
+    }
 }
+
 

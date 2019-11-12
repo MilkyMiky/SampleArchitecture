@@ -5,14 +5,14 @@
 
 import Foundation
 
-struct User: Codable{
+struct UserData: Codable{
     var userId: Int
     var userDataId: Int
     var userTitle: String
     var completed: Bool
 }
 
-extension User {
+extension UserData {
     enum CodingKeys: String, CodingKey {
         case userId
         case userDataId = "id"

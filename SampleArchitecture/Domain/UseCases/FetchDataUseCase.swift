@@ -16,12 +16,12 @@ class FetchDataUseCase {
         self.userService = userService
     }
 
-    func execute() -> Observable<[User]> {
+    func execute() -> Observable<[UserData]> {
         userService.getUsers()
-                .do(onNext: { users in
-                    for user in users {
-                        print(user.userTitle)
-                    }
-                })
+//                .do(onNext: { users in
+//                    for user in users {
+//                        print(user.userDataId)
+//                    }
+//                })
     }
 }
