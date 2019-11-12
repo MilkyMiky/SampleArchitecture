@@ -19,6 +19,7 @@
 		36EBC89248DA003FA6ECFBC3 /* RealmUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC80682149A3AA67D3348 /* RealmUserRepository.swift */; };
 		36EBCCE5364476A195833401 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC0C32A4BBA890E744B60 /* UserRepository.swift */; };
 		36EBCDB555F768AE7930E061 /* UserServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCEB6893D8B8B2A8025B4 /* UserServiceImpl.swift */; };
+		36EBCF30E169D8F07FBA4190 /* RemoveDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFF186704CACFCC88257 /* RemoveDataUseCase.swift */; };
 		CEE35D8A2379583C00236669 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE35D892379583C00236669 /* MainTableViewCell.swift */; };
 		CEF331182372E3B600BE6EDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF331172372E3B600BE6EDF /* AppDelegate.swift */; };
 		CEF3311A2372E3B600BE6EDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF331192372E3B600BE6EDF /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 		36EBCBEEDF948CD8B781119E /* RemoteUserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteUserRepository.swift; sourceTree = "<group>"; };
 		36EBCEB6893D8B8B2A8025B4 /* UserServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServiceImpl.swift; sourceTree = "<group>"; };
 		36EBCF325F6FF4A3A19A5960 /* MarkDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkDataUseCase.swift; sourceTree = "<group>"; };
+		36EBCFF186704CACFCC88257 /* RemoveDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveDataUseCase.swift; sourceTree = "<group>"; };
 		BF813FD37A39926B07E00047 /* Pods-SampleArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-SampleArchitecture/Pods-SampleArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 		CEE35D892379583C00236669 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CEF331142372E3B600BE6EDF /* SampleArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 				CEF331352373044200BE6EDF /* FetchDataUseCase.swift */,
 				36EBCF325F6FF4A3A19A5960 /* MarkDataUseCase.swift */,
 				36EBC309D96295662021D876 /* RefreshDataUseCase.swift */,
+				36EBCFF186704CACFCC88257 /* RemoveDataUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				36EBCDB555F768AE7930E061 /* UserServiceImpl.swift in Sources */,
 				36EBC4B307F58546484351A4 /* MarkDataUseCase.swift in Sources */,
 				36EBC2853E6107F772D1F0DF /* RefreshDataUseCase.swift in Sources */,
+				36EBCF30E169D8F07FBA4190 /* RemoveDataUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

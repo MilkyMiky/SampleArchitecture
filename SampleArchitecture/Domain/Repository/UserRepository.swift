@@ -10,10 +10,12 @@ import Foundation
 import RxSwift
 
 protocol UserRepository {
-    func getUsers() -> Observable<[UserData]>
+    func getUserData() -> Observable<[UserData]>
 
-    func saveUsers(users: [UserData]) -> Completable
+    func saveUserData(users: [UserData]) -> Completable
 
     func setDataCompleted(dataId: Int, completed: Bool) -> Observable<UserData>
+
+    func removeData(dataId: Int) -> Completable
 
 }

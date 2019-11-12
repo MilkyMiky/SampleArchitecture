@@ -12,4 +12,6 @@ protocol UserService {
     func getUserData() -> Observable<[UserData]>
 
     func setDataCompleted(dataId: Int, completed : Bool) -> Observable<UserData>
+
+    func removeData(dataId: Int) -> Completable
 }

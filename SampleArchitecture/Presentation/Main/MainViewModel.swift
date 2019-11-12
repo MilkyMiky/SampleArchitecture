@@ -12,6 +12,7 @@ import RxSwift
 protocol MainViewModelInput {
     func viewDidLoad()
     func cellClicked(userData: UserData)
+    func cellRemoved(row: Int)
     func refresh()
 }
 
@@ -27,27 +28,43 @@ class MainViewModel: MainViewModelInput, MainViewModelOutput {
     private let fetchDataUseCase: FetchDataUseCase
     private let markDataUseCase: MarkDataUseCase
     private let refreshDataUseCase: RefreshDataUseCase
+    private let removeDataUseCase: RemoveDataUseCase
+    private var userDataList: [UserData] = [UserData]()
 
-    init(fetchDataUseCase: FetchDataUseCase, markDataUseCase: MarkDataUseCase, refreshDataUseCase : RefreshDataUseCase) {
+    init(fetchDataUseCase: FetchDataUseCase, markDataUseCase: MarkDataUseCase, refreshDataUseCase: RefreshDataUseCase,
+         removeDataUseCase: RemoveDataUseCase) {
         self.fetchDataUseCase = fetchDataUseCase
         self.markDataUseCase = markDataUseCase
         self.refreshDataUseCase = refreshDataUseCase
+        self.removeDataUseCase = removeDataUseCase
     }
 
     func viewDidLoad() {
         fetchDataUseCase.execute()
-                .map {self.dataList.onNext($0)}
+                .map {
+                    self.userDataList = $0
+                    self.dataList.onNext($0)
+                }
                 .subscribe()
     }
 
-    func cellClicked(userData : UserData) {
+    func cellClicked(userData: UserData) {
         markDataUseCase.execute(dataId: userData.userDataId, completed: !userData.completed)
                 .subscribe()
     }
 
     func refresh() {
         refreshDataUseCase.execute()
-                .map {_ in self.isRefreshing.onNext(false)}
+                .map { _ in
+                    self.isRefreshing.onNext(false)
+                }
+                .subscribe()
+    }
+
+    func cellRemoved(row: Int) {
+        let removedData = userDataList[row]
+        removeDataUseCase
+                .execute(dataId: removedData.userDataId)
                 .subscribe()
     }
 }

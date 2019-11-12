@@ -21,8 +21,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         if let viewModel = viewModel {
             bindTo(to: viewModel)
-            setupCellTapHandling(viewModel: viewModel)
+            setupCellTapHandling()
             setRefreshControl()
+            setRemoveItem()
             viewModel.viewDidLoad()
         }
     }
@@ -64,11 +65,20 @@ class MainViewController: UIViewController {
         )
     }
 
-    private func setupCellTapHandling(viewModel: MainViewModel) {
+    private func setupCellTapHandling() {
         tableView.rx
                 .modelSelected(UserData.self)
                 .subscribe(onNext: { [unowned self] userData in
-                    viewModel.cellClicked(userData: userData)
+                    self.viewModel?.cellClicked(userData: userData)
+                })
+                .disposed(by: disposeBag)
+    }
+
+    private func setRemoveItem() {
+        tableView.rx
+                .itemDeleted
+                .subscribe(onNext:{ indexPath in
+                   self.viewModel?.cellRemoved(row: indexPath.row)
                 })
                 .disposed(by: disposeBag)
     }

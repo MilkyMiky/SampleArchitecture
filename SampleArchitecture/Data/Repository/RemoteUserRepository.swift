@@ -17,7 +17,7 @@ class RemoteUserRepository: UserRepository {
         self.rxMoyaProvider = rxMoyaProvider
     }
 
-    func getUsers() -> Observable<[UserData]> {
+    func getUserData() -> Observable<[UserData]> {
         rxMoyaProvider
                 .request(.getUsers)
                 .map {
@@ -29,11 +29,15 @@ class RemoteUserRepository: UserRepository {
                 }
     }
 
-    func saveUsers(users: [UserData]) -> Completable {
+    func saveUserData(users: [UserData]) -> Completable {
         fatalError("saveUsers() has not been implemented")
     }
 
     func setDataCompleted(dataId: Int, completed: Bool) -> Observable<UserData> {
         fatalError("setDataCompleted(completed:) has not been implemented")
+    }
+
+    func removeData(dataId: Int) -> Completable {
+        fatalError("removeData(dataId:) has not been implemented")
     }
 }
