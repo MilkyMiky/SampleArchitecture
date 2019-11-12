@@ -7,7 +7,9 @@ import Foundation
 import RxSwift
 
 protocol UserService {
-    func getUsers() -> Observable<[UserData]>
+    func refreshUserData() -> Observable<[UserData]>
+
+    func getUserData() -> Observable<[UserData]>
 
     func setDataCompleted(dataId: Int, completed : Bool) -> Observable<UserData>
 }

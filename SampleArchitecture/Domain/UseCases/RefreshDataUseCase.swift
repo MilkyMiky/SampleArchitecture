@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class FetchDataUseCase {
+class RefreshDataUseCase {
     let userService: UserService
 
     init(userService: UserService) {
@@ -17,6 +17,6 @@ class FetchDataUseCase {
     }
 
     func execute() -> Observable<[UserData]> {
-        userService.getUserData()
+        userService.refreshUserData()
     }
 }

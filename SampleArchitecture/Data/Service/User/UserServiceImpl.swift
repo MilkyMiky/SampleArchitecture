@@ -16,12 +16,21 @@ class UserServiceImpl: UserService {
         self.remoteRepo = remoteRepo
     }
 
-    func getUsers() -> Observable<[UserData]> {
-       remoteRepo.getUsers()
-               .flatMap { users in
-                   self.saveUsers(users: users)
-                           .andThen(self.realmRepo.getUsers())
-               }
+    func refreshUserData() -> Observable<[UserData]> {
+        remoteRepo.getUsers()
+                .flatMap { users in
+                    self.saveUsers(users: users)
+                            .andThen(self.realmRepo.getUsers())
+                }
+    }
+
+    func getUserData() -> Observable<[UserData]> {
+        realmRepo.getUsers()
+//       remoteRepo.getUsers()
+//               .flatMap { users in
+//                   self.saveUsers(users: users)
+//                           .andThen(self.realmRepo.getUsers())
+//               }
     }
 
     func setDataCompleted(dataId: Int, completed: Bool) -> Observable<UserData> {

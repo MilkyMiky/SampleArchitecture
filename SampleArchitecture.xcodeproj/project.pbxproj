@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2339F3ABF86FE14C2BBF994D /* Pods_SampleArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368021B047A0F8B8C5F700D9 /* Pods_SampleArchitecture.framework */; };
 		36EBC2824E03DB7214F498C5 /* RxMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC40566E1DB2E3DFEE713 /* RxMoyaProvider.swift */; };
+		36EBC2853E6107F772D1F0DF /* RefreshDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC309D96295662021D876 /* RefreshDataUseCase.swift */; };
 		36EBC2C4F1E265517239136F /* UserDataRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC68C836AF0A7E45C0E9E /* UserDataRealm.swift */; };
 		36EBC4B307F58546484351A4 /* MarkDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCF325F6FF4A3A19A5960 /* MarkDataUseCase.swift */; };
 		36EBC54429648EB912C4F6E2 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCA98F2BACB717E82AF25 /* UserService.swift */; };
@@ -33,6 +34,7 @@
 		09781BBBE3A051742D4E7F89 /* Pods-SampleArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleArchitecture.release.xcconfig"; path = "Target Support Files/Pods-SampleArchitecture/Pods-SampleArchitecture.release.xcconfig"; sourceTree = "<group>"; };
 		368021B047A0F8B8C5F700D9 /* Pods_SampleArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EBC0C32A4BBA890E744B60 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		36EBC309D96295662021D876 /* RefreshDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshDataUseCase.swift; sourceTree = "<group>"; };
 		36EBC40566E1DB2E3DFEE713 /* RxMoyaProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMoyaProvider.swift; sourceTree = "<group>"; };
 		36EBC68C836AF0A7E45C0E9E /* UserDataRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataRealm.swift; sourceTree = "<group>"; };
 		36EBC80682149A3AA67D3348 /* RealmUserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUserRepository.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				CEF331352373044200BE6EDF /* FetchDataUseCase.swift */,
 				36EBCF325F6FF4A3A19A5960 /* MarkDataUseCase.swift */,
+				36EBC309D96295662021D876 /* RefreshDataUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				36EBC70FFBD60BD7A821B60C /* UserAPIService.swift in Sources */,
 				36EBCDB555F768AE7930E061 /* UserServiceImpl.swift in Sources */,
 				36EBC4B307F58546484351A4 /* MarkDataUseCase.swift in Sources */,
+				36EBC2853E6107F772D1F0DF /* RefreshDataUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -63,12 +63,16 @@ extension SwinjectStoryboard {
         defaultContainer.register(MarkDataUseCase.self) { resolver in
             MarkDataUseCase(userService: resolver.resolve(UserService.self)!)
         }
+        defaultContainer.register(RefreshDataUseCase.self) { resolver in
+            RefreshDataUseCase(userService: resolver.resolve(UserService.self)!)
+        }
 
         //        MARK: ViewModel
         defaultContainer.register(MainViewModel.self) { resolver in
             MainViewModel(
                     fetchDataUseCase: resolver.resolve(FetchDataUseCase.self)!,
-                    markDataUseCase: resolver.resolve(MarkDataUseCase.self)!
+                    markDataUseCase: resolver.resolve(MarkDataUseCase.self)!,
+                    refreshDataUseCase: resolver.resolve(RefreshDataUseCase.self)!
             )
         }
 

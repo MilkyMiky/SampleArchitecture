@@ -22,11 +22,29 @@ class MainViewController: UIViewController {
         if let viewModel = viewModel {
             bindTo(to: viewModel)
             setupCellTapHandling(viewModel: viewModel)
+            setRefreshControl()
             viewModel.viewDidLoad()
         }
     }
 
-    func bindTo(to viewModel: MainViewModel) {
+    private func setRefreshControl() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
+    }
+
+    @objc func handleRefreshControl() {
+        viewModel?.refresh()
+    }
+
+    private func showRefresh(show: Bool) {
+        if show {
+            tableView.refreshControl?.beginRefreshing()
+        } else {
+            tableView.refreshControl?.endRefreshing()
+        }
+    }
+
+    private func bindTo(to viewModel: MainViewModel) {
         viewModel.dataList
                 .bind(
                         to: tableView.rx.items(cellIdentifier: MainTableViewCell.Identifier,
@@ -36,9 +54,17 @@ class MainViewController: UIViewController {
                     cell.setUserData(userData: userData)
                 }
                 .disposed(by: disposeBag)
+
+        disposeBag.insert(
+                viewModel.isRefreshing
+                        .map {
+                            self.showRefresh(show: $0)
+                        }
+                        .subscribe()
+        )
     }
 
-    func setupCellTapHandling(viewModel: MainViewModel) {
+    private func setupCellTapHandling(viewModel: MainViewModel) {
         tableView.rx
                 .modelSelected(UserData.self)
                 .subscribe(onNext: { [unowned self] userData in
