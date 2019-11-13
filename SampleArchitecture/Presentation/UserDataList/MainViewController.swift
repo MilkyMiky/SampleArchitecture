@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwinjectStoryboard
 
 class MainViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
@@ -69,7 +70,7 @@ class MainViewController: UIViewController {
         tableView.rx
                 .modelSelected(UserData.self)
                 .subscribe(onNext: { [unowned self] userData in
-                    self.viewModel?.cellClicked(userData: userData)
+                    self.openUserDataDetailViewController()
                 })
                 .disposed(by: disposeBag)
     }
@@ -77,10 +78,17 @@ class MainViewController: UIViewController {
     private func setRemoveItem() {
         tableView.rx
                 .itemDeleted
-                .subscribe(onNext:{ indexPath in
-                   self.viewModel?.cellRemoved(row: indexPath.row)
+                .subscribe(onNext: { indexPath in
+                    self.viewModel?.cellRemoved(row: indexPath.row)
                 })
                 .disposed(by: disposeBag)
+    }
+
+    private func openUserDataDetailViewController() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: UserDataDetailsViewController.identifier)
+                as! UserDataDetailsViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }
 

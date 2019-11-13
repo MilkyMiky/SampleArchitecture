@@ -70,6 +70,33 @@
             </objects>
             <point key="canvasLocation" x="1202.8985507246377" y="695.75892857142856"/>
         </scene>
+        <!--Details-->
+        <scene sceneID="ul9-RI-CwB">
+            <objects>
+                <viewController storyboardIdentifier="UserDataDetailsViewController" title="Details" id="gmJ-kY-CO7" customClass="UserDataDetailsViewController" customModule="SampleArchitecture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h5h-JP-K17">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello world" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQd-4A-QUQ">
+                                <rect key="frame" x="164" y="443" width="86" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CQd-4A-QUQ" firstAttribute="centerY" secondItem="FRd-rc-SXg" secondAttribute="centerY" id="WFs-YU-YVb"/>
+                            <constraint firstItem="CQd-4A-QUQ" firstAttribute="centerX" secondItem="FRd-rc-SXg" secondAttribute="centerX" id="rdk-da-d5m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FRd-rc-SXg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VfU-Jb-5jz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045" y="696"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="vLI-Ja-ybY">
             <objects>

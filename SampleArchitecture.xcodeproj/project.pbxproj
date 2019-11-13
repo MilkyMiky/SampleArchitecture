@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2339F3ABF86FE14C2BBF994D /* Pods_SampleArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368021B047A0F8B8C5F700D9 /* Pods_SampleArchitecture.framework */; };
+		36EBC24949E1D4A08651E981 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCB0365F439671210B823 /* AppContainer.swift */; };
 		36EBC2824E03DB7214F498C5 /* RxMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC40566E1DB2E3DFEE713 /* RxMoyaProvider.swift */; };
 		36EBC2853E6107F772D1F0DF /* RefreshDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC309D96295662021D876 /* RefreshDataUseCase.swift */; };
 		36EBC2C4F1E265517239136F /* UserDataRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC68C836AF0A7E45C0E9E /* UserDataRealm.swift */; };
 		36EBC4B307F58546484351A4 /* MarkDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCF325F6FF4A3A19A5960 /* MarkDataUseCase.swift */; };
 		36EBC54429648EB912C4F6E2 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCA98F2BACB717E82AF25 /* UserService.swift */; };
+		36EBC5510DD3A896A7E6CF10 /* UserDataDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC3DF316BF3273256DCAA /* UserDataDetailsViewModel.swift */; };
 		36EBC70879C163D30E3C286F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC8BD7ACA10AAA3B3B15F /* UserData.swift */; };
 		36EBC70FFBD60BD7A821B60C /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCA9B41F391638FA87E1B /* UserAPIService.swift */; };
 		36EBC85E5E2675F232240349 /* RemoteUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCBEEDF948CD8B781119E /* RemoteUserRepository.swift */; };
 		36EBC89248DA003FA6ECFBC3 /* RealmUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC80682149A3AA67D3348 /* RealmUserRepository.swift */; };
 		36EBCCE5364476A195833401 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC0C32A4BBA890E744B60 /* UserRepository.swift */; };
+		36EBCD177F5960BDEE259804 /* UserDataDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCE4159BAE5B57C35F05E /* UserDataDetailsViewController.swift */; };
 		36EBCDB555F768AE7930E061 /* UserServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCEB6893D8B8B2A8025B4 /* UserServiceImpl.swift */; };
 		36EBCF30E169D8F07FBA4190 /* RemoveDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFF186704CACFCC88257 /* RemoveDataUseCase.swift */; };
 		CEE35D8A2379583C00236669 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE35D892379583C00236669 /* MainTableViewCell.swift */; };
@@ -36,13 +39,16 @@
 		368021B047A0F8B8C5F700D9 /* Pods_SampleArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EBC0C32A4BBA890E744B60 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		36EBC309D96295662021D876 /* RefreshDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshDataUseCase.swift; sourceTree = "<group>"; };
+		36EBC3DF316BF3273256DCAA /* UserDataDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataDetailsViewModel.swift; sourceTree = "<group>"; };
 		36EBC40566E1DB2E3DFEE713 /* RxMoyaProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMoyaProvider.swift; sourceTree = "<group>"; };
 		36EBC68C836AF0A7E45C0E9E /* UserDataRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataRealm.swift; sourceTree = "<group>"; };
 		36EBC80682149A3AA67D3348 /* RealmUserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUserRepository.swift; sourceTree = "<group>"; };
 		36EBC8BD7ACA10AAA3B3B15F /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		36EBCA98F2BACB717E82AF25 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		36EBCA9B41F391638FA87E1B /* UserAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
+		36EBCB0365F439671210B823 /* AppContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		36EBCBEEDF948CD8B781119E /* RemoteUserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteUserRepository.swift; sourceTree = "<group>"; };
+		36EBCE4159BAE5B57C35F05E /* UserDataDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataDetailsViewController.swift; sourceTree = "<group>"; };
 		36EBCEB6893D8B8B2A8025B4 /* UserServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServiceImpl.swift; sourceTree = "<group>"; };
 		36EBCF325F6FF4A3A19A5960 /* MarkDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkDataUseCase.swift; sourceTree = "<group>"; };
 		36EBCFF186704CACFCC88257 /* RemoveDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveDataUseCase.swift; sourceTree = "<group>"; };
@@ -72,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36EBC0C1F6E19AFE31F544A1 /* UserDataDetails */ = {
+			isa = PBXGroup;
+			children = (
+				36EBCE4159BAE5B57C35F05E /* UserDataDetailsViewController.swift */,
+				36EBC3DF316BF3273256DCAA /* UserDataDetailsViewModel.swift */,
+			);
+			path = UserDataDetails;
+			sourceTree = "<group>";
+		};
 		36EBC13013DBB6EB691B7C8D /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,19 +247,20 @@
 		CEF3312E2372E51B00BE6EDF /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CEF3312F2372E54200BE6EDF /* Main */,
+				CEF3312F2372E54200BE6EDF /* UserDataList */,
+				36EBC0C1F6E19AFE31F544A1 /* UserDataDetails */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		CEF3312F2372E54200BE6EDF /* Main */ = {
+		CEF3312F2372E54200BE6EDF /* UserDataList */ = {
 			isa = PBXGroup;
 			children = (
 				CEF3311B2372E3B600BE6EDF /* MainViewController.swift */,
 				CEF331302372E5B800BE6EDF /* MainViewModel.swift */,
 				CEE35D892379583C00236669 /* MainTableViewCell.swift */,
 			);
-			path = Main;
+			path = UserDataList;
 			sourceTree = "<group>";
 		};
 		CEF331322372E7A600BE6EDF /* Application */ = {
@@ -252,6 +268,7 @@
 			children = (
 				CEF331172372E3B600BE6EDF /* AppDelegate.swift */,
 				CEF331192372E3B600BE6EDF /* SceneDelegate.swift */,
+				36EBCB0365F439671210B823 /* AppContainer.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -389,6 +406,9 @@
 				36EBC4B307F58546484351A4 /* MarkDataUseCase.swift in Sources */,
 				36EBC2853E6107F772D1F0DF /* RefreshDataUseCase.swift in Sources */,
 				36EBCF30E169D8F07FBA4190 /* RemoveDataUseCase.swift in Sources */,
+				36EBCD177F5960BDEE259804 /* UserDataDetailsViewController.swift in Sources */,
+				36EBC24949E1D4A08651E981 /* AppContainer.swift in Sources */,
+				36EBC5510DD3A896A7E6CF10 /* UserDataDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
