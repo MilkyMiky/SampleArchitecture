@@ -21,6 +21,8 @@ class AppContainer {
     }
 
     private func registerDataDependencies() {
+        //        MARK: Router
+        container.register(Router.self){ _ in AppRouter()}
         //        MARK: Network
         container.register(RxMoyaProvider.self) { _ in RxMoyaProvider<UserAPIService>()}
 
@@ -64,13 +66,15 @@ class AppContainer {
                     fetchDataUseCase: resolver.resolve(FetchDataUseCase.self)!,
                     markDataUseCase: resolver.resolve(MarkDataUseCase.self)!,
                     refreshDataUseCase: resolver.resolve(RefreshDataUseCase.self)!,
-                    removeDataUseCase: resolver.resolve(RemoveDataUseCase.self)!
+                    removeDataUseCase: resolver.resolve(RemoveDataUseCase.self)!,
+                    router: resolver.resolve(Router.self)!
             )
         }
 
         container.register(UserDataDetailsViewModel.self) { resolver in
             UserDataDetailsViewModel(
-                    getUserDataUseCase: resolver.resolve(GetUserDataUseCase.self)!
+                    getUserDataUseCase: resolver.resolve(GetUserDataUseCase.self)!,
+                    router: resolver.resolve(Router.self)!
             )
         }
 

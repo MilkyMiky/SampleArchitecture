@@ -17,9 +17,11 @@ protocol UserDataDetailsViewModelOutput {
 class UserDataDetailsViewModel: UserDataDetailsViewModelInput, UserDataDetailsViewModelOutput {
     var userDataSubject: PublishSubject<UserData> = PublishSubject<UserData>()
     private let getUserDataUseCase: GetUserDataUseCase
+    private let router: Router
 
-    init(getUserDataUseCase: GetUserDataUseCase) {
+    init(getUserDataUseCase: GetUserDataUseCase, router: Router) {
         self.getUserDataUseCase = getUserDataUseCase
+        self.router = router
     }
 
     func getUserData(dataId: Int) {

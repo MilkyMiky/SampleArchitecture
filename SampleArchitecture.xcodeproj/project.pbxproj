@@ -24,6 +24,7 @@
 		36EBCD177F5960BDEE259804 /* UserDataDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCE4159BAE5B57C35F05E /* UserDataDetailsViewController.swift */; };
 		36EBCDB555F768AE7930E061 /* UserServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCEB6893D8B8B2A8025B4 /* UserServiceImpl.swift */; };
 		36EBCF30E169D8F07FBA4190 /* RemoveDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFF186704CACFCC88257 /* RemoveDataUseCase.swift */; };
+		36EBCFF93BCB284C133E7594 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC30C6E0EE2D15A76825E /* AppRouter.swift */; };
 		CEE35D8A2379583C00236669 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE35D892379583C00236669 /* MainTableViewCell.swift */; };
 		CEF331182372E3B600BE6EDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF331172372E3B600BE6EDF /* AppDelegate.swift */; };
 		CEF3311A2372E3B600BE6EDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF331192372E3B600BE6EDF /* SceneDelegate.swift */; };
@@ -41,6 +42,7 @@
 		36EBC0C32A4BBA890E744B60 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		36EBC1CED35E0CB60D444305 /* GetUserDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserDataUseCase.swift; sourceTree = "<group>"; };
 		36EBC309D96295662021D876 /* RefreshDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshDataUseCase.swift; sourceTree = "<group>"; };
+		36EBC30C6E0EE2D15A76825E /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		36EBC3DF316BF3273256DCAA /* UserDataDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataDetailsViewModel.swift; sourceTree = "<group>"; };
 		36EBC40566E1DB2E3DFEE713 /* RxMoyaProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMoyaProvider.swift; sourceTree = "<group>"; };
 		36EBC68C836AF0A7E45C0E9E /* UserDataRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataRealm.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				CEF331172372E3B600BE6EDF /* AppDelegate.swift */,
 				CEF331192372E3B600BE6EDF /* SceneDelegate.swift */,
 				36EBCB0365F439671210B823 /* AppContainer.swift */,
+				36EBC30C6E0EE2D15A76825E /* AppRouter.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				36EBC24949E1D4A08651E981 /* AppContainer.swift in Sources */,
 				36EBC5510DD3A896A7E6CF10 /* UserDataDetailsViewModel.swift in Sources */,
 				36EBC403571D9F980929EAB7 /* GetUserDataUseCase.swift in Sources */,
+				36EBCFF93BCB284C133E7594 /* AppRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

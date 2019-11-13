@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import SwinjectStoryboard
 
 class MainViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
@@ -49,8 +48,7 @@ class MainViewController: UIViewController {
     private func bindTo(to viewModel: MainViewModel) {
         viewModel.dataList
                 .bind(
-                        to: tableView.rx.items(cellIdentifier: MainTableViewCell.Identifier,
-                                cellType: MainTableViewCell.self)
+                        to: tableView.rx.items(cellIdentifier: MainTableViewCell.Identifier, cellType: MainTableViewCell.self)
                 ) {
                     row, userData, cell in
                     cell.setUserData(userData: userData)
@@ -70,7 +68,7 @@ class MainViewController: UIViewController {
         tableView.rx
                 .modelSelected(UserData.self)
                 .subscribe(onNext: { userData in
-                    self.openUserDataDetailViewController(dataId: userData.userDataId)
+                    self.viewModel?.cellClicked(viewController: self, dataId: userData.userDataId)
                 })
                 .disposed(by: disposeBag)
     }
@@ -82,14 +80,6 @@ class MainViewController: UIViewController {
                     self.viewModel?.cellRemoved(row: indexPath.row)
                 })
                 .disposed(by: disposeBag)
-    }
-
-    private func openUserDataDetailViewController(dataId: Int) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: UserDataDetailsViewController.identifier)
-                as! UserDataDetailsViewController
-        newViewController.userDataId = dataId
-        self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }
 

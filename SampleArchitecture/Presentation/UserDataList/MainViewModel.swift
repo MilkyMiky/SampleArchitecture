@@ -11,7 +11,7 @@ import RxSwift
 
 protocol MainViewModelInput {
     func viewDidLoad()
-    func cellClicked(userData: UserData)
+    func cellClicked(viewController: UIViewController, dataId: Int)
     func cellRemoved(row: Int)
     func refresh()
 }
@@ -24,7 +24,7 @@ protocol MainViewModelOutput {
 class MainViewModel: MainViewModelInput, MainViewModelOutput {
     var dataList: PublishSubject<[UserData]> = PublishSubject<[UserData]>()
     var isRefreshing: PublishSubject<Bool> = PublishSubject<Bool>()
-
+    private let router: Router
     private let fetchDataUseCase: FetchDataUseCase
     private let markDataUseCase: MarkDataUseCase
     private let refreshDataUseCase: RefreshDataUseCase
@@ -32,11 +32,12 @@ class MainViewModel: MainViewModelInput, MainViewModelOutput {
     private var userDataList: [UserData] = [UserData]()
 
     init(fetchDataUseCase: FetchDataUseCase, markDataUseCase: MarkDataUseCase, refreshDataUseCase: RefreshDataUseCase,
-         removeDataUseCase: RemoveDataUseCase) {
+         removeDataUseCase: RemoveDataUseCase, router: Router) {
         self.fetchDataUseCase = fetchDataUseCase
         self.markDataUseCase = markDataUseCase
         self.refreshDataUseCase = refreshDataUseCase
         self.removeDataUseCase = removeDataUseCase
+        self.router = router
     }
 
     func viewDidLoad() {
@@ -48,9 +49,8 @@ class MainViewModel: MainViewModelInput, MainViewModelOutput {
                 .subscribe()
     }
 
-    func cellClicked(userData: UserData) {
-        markDataUseCase.execute(dataId: userData.userDataId, completed: !userData.completed)
-                .subscribe()
+    func cellClicked(viewController: UIViewController, dataId: Int) {
+        router.openUserDataDetailsViewController(viewController: viewController, dataId: dataId)
     }
 
     func refresh() {
