@@ -52,6 +52,9 @@ class AppContainer {
         container.register(RemoveDataUseCase.self) { resolver in
             RemoveDataUseCase(userService: resolver.resolve(UserService.self)!)
         }
+        container.register(GetUserDataUseCase.self) { resolver in
+            GetUserDataUseCase(userService: resolver.resolve(UserService.self)!)
+        }
     }
 
     private func registerPresentationDependencies() {
@@ -66,7 +69,9 @@ class AppContainer {
         }
 
         container.register(UserDataDetailsViewModel.self) { resolver in
-            UserDataDetailsViewModel()
+            UserDataDetailsViewModel(
+                    getUserDataUseCase: resolver.resolve(GetUserDataUseCase.self)!
+            )
         }
 
         //        MARK: ViewControllers

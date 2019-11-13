@@ -69,8 +69,8 @@ class MainViewController: UIViewController {
     private func setupCellTapHandling() {
         tableView.rx
                 .modelSelected(UserData.self)
-                .subscribe(onNext: { [unowned self] userData in
-                    self.openUserDataDetailViewController()
+                .subscribe(onNext: { userData in
+                    self.openUserDataDetailViewController(dataId: userData.userDataId)
                 })
                 .disposed(by: disposeBag)
     }
@@ -84,10 +84,11 @@ class MainViewController: UIViewController {
                 .disposed(by: disposeBag)
     }
 
-    private func openUserDataDetailViewController() {
+    private func openUserDataDetailViewController(dataId: Int) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: UserDataDetailsViewController.identifier)
                 as! UserDataDetailsViewController
+        newViewController.userDataId = dataId
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }

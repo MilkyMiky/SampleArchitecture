@@ -78,8 +78,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello world" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQd-4A-QUQ">
-                                <rect key="frame" x="164" y="443" width="86" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello world" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQd-4A-QUQ">
+                                <rect key="frame" x="16" y="442.5" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,10 +88,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="CQd-4A-QUQ" firstAttribute="centerY" secondItem="FRd-rc-SXg" secondAttribute="centerY" id="WFs-YU-YVb"/>
-                            <constraint firstItem="CQd-4A-QUQ" firstAttribute="centerX" secondItem="FRd-rc-SXg" secondAttribute="centerX" id="rdk-da-d5m"/>
+                            <constraint firstItem="FRd-rc-SXg" firstAttribute="trailing" secondItem="CQd-4A-QUQ" secondAttribute="trailing" constant="16" id="eEV-Jt-3UB"/>
+                            <constraint firstItem="CQd-4A-QUQ" firstAttribute="leading" secondItem="FRd-rc-SXg" secondAttribute="leading" constant="16" id="f7h-Yb-niR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FRd-rc-SXg"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="CQd-4A-QUQ" id="Q9p-T1-dC2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfU-Jb-5jz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,7 +17,11 @@ class RemoteUserRepository: UserRepository {
         self.rxMoyaProvider = rxMoyaProvider
     }
 
-    func getUserData() -> Observable<[UserData]> {
+    func getUserData(dataId: Int) -> Observable<UserData> {
+        fatalError("getUserData(dataId:) has not been implemented")
+    }
+
+    func getUserDataList() -> Observable<[UserData]> {
         rxMoyaProvider
                 .request(.getUsers)
                 .map {

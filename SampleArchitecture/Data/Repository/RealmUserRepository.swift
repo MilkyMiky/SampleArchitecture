@@ -11,7 +11,17 @@ import RealmSwift
 class RealmUserRepository: UserRepository {
     private let realm = try! Realm()
 
-    func getUserData() -> Observable<[UserData]> {
+    func getUserData(dataId: Int) -> Observable<UserData> {
+        Observable.just(realm.objects(UserDataRealm.self).filter("userDataId = %@", dataId).first!)
+                .flatMap { realms in
+                    self.toDomain(users: [realms])
+                            .map { userDataList in
+                                userDataList.first!
+                            }
+                }
+    }
+
+    func getUserDataList() -> Observable<[UserData]> {
         let users = realm.objects(UserDataRealm.self)
         return Observable.collection(from: users)
                 .flatMap { users in
@@ -56,7 +66,8 @@ class RealmUserRepository: UserRepository {
             } catch {
                 completable(.error(error))
             }
-            return Disposables.create{}
+            return Disposables.create {
+            }
         }
     }
 

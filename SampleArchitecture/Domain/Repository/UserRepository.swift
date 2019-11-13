@@ -10,7 +10,10 @@ import Foundation
 import RxSwift
 
 protocol UserRepository {
-    func getUserData() -> Observable<[UserData]>
+
+    func getUserData(dataId: Int) -> Observable<UserData>
+
+    func getUserDataList() -> Observable<[UserData]>
 
     func saveUserData(users: [UserData]) -> Completable
 

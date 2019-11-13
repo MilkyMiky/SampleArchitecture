@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
         )
         Realm.Configuration.defaultConfiguration = configuration
-//        let realm = try! Realm()
     }
 }
 
