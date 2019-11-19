@@ -8,8 +8,8 @@
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell {
-    static let Identifier = "MainTableViewCell"
+class UserDataListTableViewCell: UITableViewCell {
+    static let Identifier = "UserDataListTableViewCell"
 
     @IBOutlet weak var title : UILabel!
     @IBOutlet weak var checkImage : UIImageView!

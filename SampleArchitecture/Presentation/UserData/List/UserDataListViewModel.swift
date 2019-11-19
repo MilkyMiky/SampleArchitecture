@@ -9,19 +9,19 @@
 import Foundation
 import RxSwift
 
-protocol MainViewModelInput {
+protocol UserDataListViewModelInput {
     func viewDidLoad()
     func cellClicked(viewController: UIViewController, dataId: Int)
     func cellRemoved(row: Int)
     func refresh()
 }
 
-protocol MainViewModelOutput {
+protocol UserDataListViewModelOutput {
     var dataList: PublishSubject<[UserData]> { get }
     var isRefreshing: PublishSubject<Bool> { get }
 }
 
-class MainViewModel: MainViewModelInput, MainViewModelOutput {
+class UserDataListViewModel: UserDataListViewModelInput, UserDataListViewModelOutput {
     var dataList: PublishSubject<[UserData]> = PublishSubject<[UserData]>()
     var isRefreshing: PublishSubject<Bool> = PublishSubject<Bool>()
     private let router: Router

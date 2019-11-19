@@ -61,8 +61,8 @@ class AppContainer {
 
     private func registerPresentationDependencies() {
         //        MARK: ViewModels
-        container.register(MainViewModel.self) { resolver in
-            MainViewModel(
+        container.register(UserDataListViewModel.self) { resolver in
+            UserDataListViewModel(
                     fetchDataUseCase: resolver.resolve(FetchDataUseCase.self)!,
                     markDataUseCase: resolver.resolve(MarkDataUseCase.self)!,
                     refreshDataUseCase: resolver.resolve(RefreshDataUseCase.self)!,
@@ -79,8 +79,8 @@ class AppContainer {
         }
 
         //        MARK: ViewControllers
-        container.storyboardInitCompleted(MainViewController.self) { (container, viewController) in
-            viewController.viewModel = container.resolve(MainViewModel.self)
+        container.storyboardInitCompleted(UserDataListViewController.self) { (container, viewController) in
+            viewController.viewModel = container.resolve(UserDataListViewModel.self)
         }
 
         container.storyboardInitCompleted(UserDataDetailsViewController.self) { (container, viewController) in

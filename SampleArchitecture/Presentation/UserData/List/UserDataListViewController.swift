@@ -10,10 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MainViewController: UIViewController {
+class UserDataListViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
 
-    var viewModel: MainViewModel?
+    var viewModel: UserDataListViewModel?
     private var userList = [UserData]()
     private let disposeBag = DisposeBag()
 
@@ -45,10 +45,10 @@ class MainViewController: UIViewController {
         }
     }
 
-    private func bindTo(to viewModel: MainViewModel) {
+    private func bindTo(to viewModel: UserDataListViewModel) {
         viewModel.dataList
                 .bind(
-                        to: tableView.rx.items(cellIdentifier: MainTableViewCell.Identifier, cellType: MainTableViewCell.self)
+                        to: tableView.rx.items(cellIdentifier: UserDataListTableViewCell.Identifier, cellType: UserDataListTableViewCell.self)
                 ) {
                     row, userData, cell in
                     cell.setUserData(userData: userData)
