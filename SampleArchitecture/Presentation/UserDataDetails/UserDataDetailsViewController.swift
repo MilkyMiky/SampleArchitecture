@@ -26,8 +26,9 @@ class UserDataDetailsViewController: UIViewController {
 
     private func bindTo(to viewModel: UserDataDetailsViewModel) {
         viewModel.userDataSubject
-                .do(onNext: { userData in self.label.text = userData.userTitle})
+                .do(onNext: { [unowned self] userData in self.label.text = userData.userTitle})
                 .subscribe()
                 .disposed(by: disposeBag)
+        
     }
 }

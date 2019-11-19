@@ -11,10 +11,10 @@ protocol Router {
 }
 
 class AppRouter : Router {
-    let mainStoryboardName = "Main"
+    let userDataStoryboardName = "UserData"
 
     func openUserDataDetailsViewController(viewController: UIViewController, dataId: Int) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: mainStoryboardName, bundle: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: userDataStoryboardName, bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: UserDataDetailsViewController.identifier)
                 as! UserDataDetailsViewController
         newViewController.userDataId = dataId
