@@ -9,10 +9,14 @@
 import UIKit
 
 class ImageListViewController: UIViewController {
+    @IBOutlet private weak var image : UIImageView!
+    var viewModel: ImageListViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let viewModel = viewModel {
+            viewModel.loadImage(view: image)
+        }
     }
 
 }

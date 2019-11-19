@@ -39,6 +39,8 @@ class AppContainer {
                     remoteRepo: resolver.resolve(UserRepository.self, name: self.remoteUserRepository)!
             )
         }
+
+        container.register(ImageLoader.self){ _ in NukeImageLoader()}
     }
 
     private func registerDomainDependencies() {
@@ -56,6 +58,9 @@ class AppContainer {
         }
         container.register(GetUserDataUseCase.self) { resolver in
             GetUserDataUseCase(userService: resolver.resolve(UserService.self)!)
+        }
+        container.register(FetchImageUseCase.self) { resolver in
+            FetchImageUseCase(imageService: resolver.resolve(ImageLoader.self)!)
         }
     }
 
@@ -78,6 +83,13 @@ class AppContainer {
             )
         }
 
+        container.register(ImageListViewModel.self) { resolver in
+            ImageListViewModel(
+                    fetchImageUseCase: resolver.resolve(FetchImageUseCase.self)!,
+                    router: resolver.resolve(Router.self)!
+            )
+        }
+
         //        MARK: ViewControllers
         container.storyboardInitCompleted(UserDataListViewController.self) { (container, viewController) in
             viewController.viewModel = container.resolve(UserDataListViewModel.self)
@@ -85,6 +97,10 @@ class AppContainer {
 
         container.storyboardInitCompleted(UserDataDetailsViewController.self) { (container, viewController) in
             viewController.viewModel = container.resolve(UserDataDetailsViewModel.self)
+        }
+
+        container.storyboardInitCompleted(ImageListViewController.self) { (container, viewController) in
+            viewController.viewModel = container.resolve(ImageListViewModel.self)
         }
     }
 }

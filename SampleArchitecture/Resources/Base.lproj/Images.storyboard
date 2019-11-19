@@ -14,10 +14,27 @@
                     <view key="view" contentMode="scaleToFill" id="LcF-gh-FeX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YU7-N4-elx">
+                                <rect key="frame" x="16" y="298" width="382" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="J6l-dw-ngv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YU7-N4-elx" firstAttribute="leading" secondItem="51q-Yt-RqH" secondAttribute="leading" constant="16" id="I5a-u8-gWq"/>
+                            <constraint firstItem="51q-Yt-RqH" firstAttribute="trailing" secondItem="YU7-N4-elx" secondAttribute="trailing" constant="16" id="Rhg-zk-pe6"/>
+                            <constraint firstItem="YU7-N4-elx" firstAttribute="centerX" secondItem="LcF-gh-FeX" secondAttribute="centerX" id="ZUj-be-wOz"/>
+                            <constraint firstItem="YU7-N4-elx" firstAttribute="centerY" secondItem="LcF-gh-FeX" secondAttribute="centerY" id="ddJ-b7-79b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="51q-Yt-RqH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Images" id="1HF-AV-gFN"/>
+                    <connections>
+                        <outlet property="image" destination="YU7-N4-elx" id="DsE-YP-Yyj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTF-MI-wZy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

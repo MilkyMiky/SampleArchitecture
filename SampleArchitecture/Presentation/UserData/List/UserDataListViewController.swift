@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class UserDataListViewController: UIViewController {
-    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     var viewModel: UserDataListViewModel?
     private var userList = [UserData]()
