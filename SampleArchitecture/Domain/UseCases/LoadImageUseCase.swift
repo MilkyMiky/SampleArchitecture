@@ -7,14 +7,14 @@ import Foundation
 import RxSwift
 import UIKit
 
-class FetchImageUseCase {
-    let imageService: ImageLoader
+class LoadImageUseCase {
+    let imageLoader: ImageLoader
 
-    init(imageService: ImageLoader) {
-        self.imageService = imageService
+    init(imageLoader: ImageLoader) {
+        self.imageLoader = imageLoader
     }
 
     func execute(url: URL, into: UIImageView) -> Completable {
-        imageService.loadImage(url: url, into: into)
+        imageLoader.loadImage(url: url, into: into)
     }
 }

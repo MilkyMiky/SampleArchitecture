@@ -15,7 +15,7 @@
 		36EBC2853E6107F772D1F0DF /* RefreshDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC309D96295662021D876 /* RefreshDataUseCase.swift */; };
 		36EBC2C4F1E265517239136F /* UserDataRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC68C836AF0A7E45C0E9E /* UserDataRealm.swift */; };
 		36EBC403571D9F980929EAB7 /* GetUserDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC1CED35E0CB60D444305 /* GetUserDataUseCase.swift */; };
-		36EBC49DD253D9E773C17BF9 /* FetchImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC20898601334F45CBE21 /* FetchImageUseCase.swift */; };
+		36EBC49DD253D9E773C17BF9 /* LoadImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC20898601334F45CBE21 /* LoadImageUseCase.swift */; };
 		36EBC49FB6019D0C474D1B1C /* UserDataDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC308966AC7792D4499B4 /* UserDataDetailsViewController.swift */; };
 		36EBC4B307F58546484351A4 /* MarkDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCF325F6FF4A3A19A5960 /* MarkDataUseCase.swift */; };
 		36EBC54429648EB912C4F6E2 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCA98F2BACB717E82AF25 /* UserService.swift */; };
@@ -25,13 +25,16 @@
 		36EBC70FFBD60BD7A821B60C /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCA9B41F391638FA87E1B /* UserAPIService.swift */; };
 		36EBC85E5E2675F232240349 /* RemoteUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCBEEDF948CD8B781119E /* RemoteUserRepository.swift */; };
 		36EBC89248DA003FA6ECFBC3 /* RealmUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC80682149A3AA67D3348 /* RealmUserRepository.swift */; };
+		36EBC89E34864999DF59E863 /* FetchImagesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC89C9B98D373E0F799B5 /* FetchImagesUseCase.swift */; };
 		36EBC8B5361EE071CBBCA216 /* UserDataListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC4D0CCF63AF2C675CD51 /* UserDataListViewModel.swift */; };
 		36EBC977A5CD17EFF318020D /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFD47CE0C65959FE78B4 /* ImageListViewController.swift */; };
 		36EBCA7B713019838EEDE298 /* UserDataDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCDEE2A27CE8600C50284 /* UserDataDetailsViewModel.swift */; };
 		36EBCBAF48942B9F9AF1DE6D /* NukeImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC228BC9555A7B21FFCD0 /* NukeImageLoader.swift */; };
 		36EBCCE5364476A195833401 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC0C32A4BBA890E744B60 /* UserRepository.swift */; };
 		36EBCDB555F768AE7930E061 /* UserServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCEB6893D8B8B2A8025B4 /* UserServiceImpl.swift */; };
+		36EBCEC06D8399C62DF24F57 /* RemoteImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC505A94C9703E1B3B225 /* RemoteImageRepository.swift */; };
 		36EBCF30E169D8F07FBA4190 /* RemoveDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFF186704CACFCC88257 /* RemoveDataUseCase.swift */; };
+		36EBCFAEB5FC7B1356233945 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC8D5C9B38DCB07757955 /* ImageRepository.swift */; };
 		36EBCFF93BCB284C133E7594 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC30C6E0EE2D15A76825E /* AppRouter.swift */; };
 		CE5D5D9C2383F296001F3F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5D5D9A2383F296001F3F56 /* Main.storyboard */; };
 		CE5D5DA12383F4C3001F3F56 /* Images.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5D5D9F2383F4C3001F3F56 /* Images.storyboard */; };
@@ -49,15 +52,18 @@
 		368021B047A0F8B8C5F700D9 /* Pods_SampleArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EBC0C32A4BBA890E744B60 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		36EBC1CED35E0CB60D444305 /* GetUserDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserDataUseCase.swift; sourceTree = "<group>"; };
-		36EBC20898601334F45CBE21 /* FetchImageUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImageUseCase.swift; sourceTree = "<group>"; };
+		36EBC20898601334F45CBE21 /* LoadImageUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadImageUseCase.swift; sourceTree = "<group>"; };
 		36EBC228BC9555A7B21FFCD0 /* NukeImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NukeImageLoader.swift; sourceTree = "<group>"; };
 		36EBC308966AC7792D4499B4 /* UserDataDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataDetailsViewController.swift; sourceTree = "<group>"; };
 		36EBC309D96295662021D876 /* RefreshDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshDataUseCase.swift; sourceTree = "<group>"; };
 		36EBC30C6E0EE2D15A76825E /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		36EBC4D0CCF63AF2C675CD51 /* UserDataListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataListViewModel.swift; sourceTree = "<group>"; };
+		36EBC505A94C9703E1B3B225 /* RemoteImageRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageRepository.swift; sourceTree = "<group>"; };
 		36EBC68C836AF0A7E45C0E9E /* UserDataRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataRealm.swift; sourceTree = "<group>"; };
 		36EBC80682149A3AA67D3348 /* RealmUserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUserRepository.swift; sourceTree = "<group>"; };
+		36EBC89C9B98D373E0F799B5 /* FetchImagesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchImagesUseCase.swift; sourceTree = "<group>"; };
 		36EBC8BD7ACA10AAA3B3B15F /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		36EBC8D5C9B38DCB07757955 /* ImageRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		36EBC92806ABDB5D6F8E55D9 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		36EBC9DB84FD15D11D9FE711 /* RxMoyaProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMoyaProvider.swift; sourceTree = "<group>"; };
 		36EBCA98F2BACB717E82AF25 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				36EBC0C32A4BBA890E744B60 /* UserRepository.swift */,
+				36EBC8D5C9B38DCB07757955 /* ImageRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 			children = (
 				36EBCBEEDF948CD8B781119E /* RemoteUserRepository.swift */,
 				36EBC80682149A3AA67D3348 /* RealmUserRepository.swift */,
+				36EBC505A94C9703E1B3B225 /* RemoteImageRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -237,7 +245,8 @@
 				36EBC309D96295662021D876 /* RefreshDataUseCase.swift */,
 				36EBCFF186704CACFCC88257 /* RemoveDataUseCase.swift */,
 				36EBC1CED35E0CB60D444305 /* GetUserDataUseCase.swift */,
-				36EBC20898601334F45CBE21 /* FetchImageUseCase.swift */,
+				36EBC20898601334F45CBE21 /* LoadImageUseCase.swift */,
+				36EBC89C9B98D373E0F799B5 /* FetchImagesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -486,9 +495,12 @@
 				36EBC00B70CB9B6A27E102B3 /* RxMoyaProvider.swift in Sources */,
 				36EBCBAF48942B9F9AF1DE6D /* NukeImageLoader.swift in Sources */,
 				36EBC66412864EA3BF8E00D8 /* ImageLoader.swift in Sources */,
-				36EBC49DD253D9E773C17BF9 /* FetchImageUseCase.swift in Sources */,
+				36EBC49DD253D9E773C17BF9 /* LoadImageUseCase.swift in Sources */,
 				36EBC977A5CD17EFF318020D /* ImageListViewController.swift in Sources */,
 				36EBC04C3CEDD43F6115129A /* ImageListViewModel.swift in Sources */,
+				36EBCFAEB5FC7B1356233945 /* ImageRepository.swift in Sources */,
+				36EBCEC06D8399C62DF24F57 /* RemoteImageRepository.swift in Sources */,
+				36EBC89E34864999DF59E863 /* FetchImagesUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

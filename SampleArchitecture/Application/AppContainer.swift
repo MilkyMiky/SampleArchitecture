@@ -32,6 +32,8 @@ class AppContainer {
         }
         container.register(UserRepository.self, name: realmUserRepository) { _ in RealmUserRepository()}
 
+        container.register(ImageRepository.self) { _ in RemoteImageRepository()}
+
         //        MARK: Services
         container.register(UserService.self) { resolver in
             UserServiceImpl(
@@ -58,8 +60,11 @@ class AppContainer {
         container.register(GetUserDataUseCase.self) { resolver in
             GetUserDataUseCase(userService: resolver.resolve(UserService.self)!)
         }
-        container.register(FetchImageUseCase.self) { resolver in
-            FetchImageUseCase(imageService: resolver.resolve(ImageLoader.self)!)
+        container.register(LoadImageUseCase.self) { resolver in
+            LoadImageUseCase(imageLoader: resolver.resolve(ImageLoader.self)!)
+        }
+        container.register(FetchImagesUseCase.self) { resolver in
+            FetchImagesUseCase(imageRepository: resolver.resolve(ImageRepository.self)!)
         }
     }
 
@@ -82,7 +87,8 @@ class AppContainer {
         }
         container.register(ImageListViewModel.self) { resolver in
             ImageListViewModel(
-                    fetchImageUseCase: resolver.resolve(FetchImageUseCase.self)!,
+                    loadImageUseCase: resolver.resolve(LoadImageUseCase.self)!,
+                    fetchImagesUseCase: resolver.resolve(FetchImagesUseCase.self)!,
                     router: resolver.resolve(Router.self)!
             )
         }

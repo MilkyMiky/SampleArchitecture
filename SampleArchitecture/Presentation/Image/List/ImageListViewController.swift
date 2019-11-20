@@ -19,17 +19,18 @@ class ImageListViewController: UIViewController {
         setCellSize()
         if let viewModel = viewModel {
             bindTo(to: viewModel)
+            viewModel.fetchImages()
         }
     }
 
     private func setCellSize() {
-        let width = (view.frame.size.width - 10) / 2
+        let width = (view.frame.size.width - 20) / 2
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
     }
 
    private func bindTo(to viewModel: ImageListViewModel) {
-       viewModel.getImageURLs()
+       viewModel.imageList
                .bind(to: collectionView.rx.items(cellIdentifier: ImageListTableViewCell.Identifier,
                        cellType: ImageListTableViewCell.self)) { (_, url, cell) in
                    self.viewModel?.loadImage(url: URL(string: url)!, view: cell.cellImage)

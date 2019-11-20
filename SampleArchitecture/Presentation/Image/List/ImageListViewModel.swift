@@ -9,31 +9,35 @@ import RxSwift
 
 protocol ImageListViewModelInput {
     func loadImage(url: URL, view: UIImageView)
+    func fetchImages()
 }
 
 protocol ImageListViewModelOutput {
-    func getImageURLs() -> Observable<[String]>
+    var imageList: PublishSubject<[String]> { get }
 }
 
-class ImageListViewModel : ImageListViewModelInput, ImageListViewModelOutput {
-    private let fetchImageUseCase: FetchImageUseCase
+class ImageListViewModel: ImageListViewModelInput, ImageListViewModelOutput {
+    var imageList = PublishSubject<[String]>()
+    private let loadImageUseCase: LoadImageUseCase
+    private let fetchImagesUseCase: FetchImagesUseCase
     private let router: Router
 
-    init(fetchImageUseCase: FetchImageUseCase, router: Router) {
-        self.fetchImageUseCase = fetchImageUseCase
+    init(loadImageUseCase: LoadImageUseCase, fetchImagesUseCase: FetchImagesUseCase, router: Router) {
+        self.loadImageUseCase = loadImageUseCase
+        self.fetchImagesUseCase = fetchImagesUseCase
         self.router = router
     }
 
-    func loadImage(url: URL, view: UIImageView) {
-        fetchImageUseCase.execute(url: url, into: view)
-        .subscribe()
+    func fetchImages() {
+        fetchImagesUseCase.execute()
+                .map {
+                    self.imageList.onNext($0)
+                }
+                .subscribe()
     }
 
-    func getImageURLs() -> Observable<[String]> {
-        var urls = [String]()
-        for i in 1...10 {
-            urls.append("https://picsum.photos/id/237/200/300")
-        }
-        return Observable.just(urls)
+    func loadImage(url: URL, view: UIImageView) {
+        loadImageUseCase.execute(url: url, into: view)
+                .subscribe()
     }
 }

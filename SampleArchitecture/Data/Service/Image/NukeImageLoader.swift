@@ -7,13 +7,14 @@ import Foundation
 import Nuke
 import RxSwift
 
-class NukeImageLoader : ImageLoader {
+class NukeImageLoader: ImageLoader {
 
-    func loadImage(url: URL, into: UIImageView ) -> Completable {
-      Completable.create { completable in
-           Nuke.loadImage(with: url, into: into)
-           completable(.completed)
-           return Disposables.create {}
-       }
+    func loadImage(url: URL, into: UIImageView) -> Completable {
+        Completable.create { completable in
+            Nuke.loadImage(with: url, into: into)
+            completable(.completed)
+            return Disposables.create {
+            }
+        }
     }
 }
