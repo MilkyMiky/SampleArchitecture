@@ -39,7 +39,6 @@ class AppContainer {
                     remoteRepo: resolver.resolve(UserRepository.self, name: self.remoteUserRepository)!
             )
         }
-
         container.register(ImageLoader.self){ _ in NukeImageLoader()}
     }
 
@@ -75,14 +74,12 @@ class AppContainer {
                     router: resolver.resolve(Router.self)!
             )
         }
-
         container.register(UserDataDetailsViewModel.self) { resolver in
             UserDataDetailsViewModel(
                     getUserDataUseCase: resolver.resolve(GetUserDataUseCase.self)!,
                     router: resolver.resolve(Router.self)!
             )
         }
-
         container.register(ImageListViewModel.self) { resolver in
             ImageListViewModel(
                     fetchImageUseCase: resolver.resolve(FetchImageUseCase.self)!,
@@ -94,11 +91,9 @@ class AppContainer {
         container.storyboardInitCompleted(UserDataListViewController.self) { (container, viewController) in
             viewController.viewModel = container.resolve(UserDataListViewModel.self)
         }
-
         container.storyboardInitCompleted(UserDataDetailsViewController.self) { (container, viewController) in
             viewController.viewModel = container.resolve(UserDataDetailsViewModel.self)
         }
-
         container.storyboardInitCompleted(ImageListViewController.self) { (container, viewController) in
             viewController.viewModel = container.resolve(ImageListViewModel.self)
         }

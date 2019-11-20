@@ -35,6 +35,7 @@
 		36EBCFF93BCB284C133E7594 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC30C6E0EE2D15A76825E /* AppRouter.swift */; };
 		CE5D5D9C2383F296001F3F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5D5D9A2383F296001F3F56 /* Main.storyboard */; };
 		CE5D5DA12383F4C3001F3F56 /* Images.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5D5D9F2383F4C3001F3F56 /* Images.storyboard */; };
+		CEC0A9322384389500AB20FB /* ImageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0A9312384389500AB20FB /* ImageListTableViewCell.swift */; };
 		CEF331182372E3B600BE6EDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF331172372E3B600BE6EDF /* AppDelegate.swift */; };
 		CEF3311A2372E3B600BE6EDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF331192372E3B600BE6EDF /* SceneDelegate.swift */; };
 		CEF3311F2372E3B600BE6EDF /* UserData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF3311D2372E3B600BE6EDF /* UserData.storyboard */; };
@@ -74,6 +75,7 @@
 		BF813FD37A39926B07E00047 /* Pods-SampleArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-SampleArchitecture/Pods-SampleArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 		CE5D5D9B2383F296001F3F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE5D5DA02383F4C3001F3F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Images.storyboard; sourceTree = "<group>"; };
+		CEC0A9312384389500AB20FB /* ImageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListTableViewCell.swift; sourceTree = "<group>"; };
 		CEF331142372E3B600BE6EDF /* SampleArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF331172372E3B600BE6EDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF331192372E3B600BE6EDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				36EBCFD47CE0C65959FE78B4 /* ImageListViewController.swift */,
 				36EBCAAD48BEFC18674BAC4B /* ImageListViewModel.swift */,
+				CEC0A9312384389500AB20FB /* ImageListTableViewCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				36EBCF30E169D8F07FBA4190 /* RemoveDataUseCase.swift in Sources */,
 				36EBC24949E1D4A08651E981 /* AppContainer.swift in Sources */,
 				36EBC403571D9F980929EAB7 /* GetUserDataUseCase.swift in Sources */,
+				CEC0A9322384389500AB20FB /* ImageListTableViewCell.swift in Sources */,
 				36EBCFF93BCB284C133E7594 /* AppRouter.swift in Sources */,
 				36EBC49FB6019D0C474D1B1C /* UserDataDetailsViewController.swift in Sources */,
 				36EBCA7B713019838EEDE298 /* UserDataDetailsViewModel.swift in Sources */,

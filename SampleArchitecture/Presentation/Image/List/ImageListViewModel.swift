@@ -5,12 +5,17 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 protocol ImageListViewModelInput {
-    func loadImage(view: UIImageView)
+    func loadImage(url: URL, view: UIImageView)
 }
 
-class ImageListViewModel : ImageListViewModelInput {
+protocol ImageListViewModelOutput {
+    func getImageURLs() -> Observable<[String]>
+}
+
+class ImageListViewModel : ImageListViewModelInput, ImageListViewModelOutput {
     private let fetchImageUseCase: FetchImageUseCase
     private let router: Router
 
@@ -19,9 +24,16 @@ class ImageListViewModel : ImageListViewModelInput {
         self.router = router
     }
 
-    func loadImage(view: UIImageView) {
-        fetchImageUseCase.execute(url: URL(string: "https://picsum.photos/id/237/200/300")!,
-                into: view)
+    func loadImage(url: URL, view: UIImageView) {
+        fetchImageUseCase.execute(url: url, into: view)
         .subscribe()
+    }
+
+    func getImageURLs() -> Observable<[String]> {
+        var urls = [String]()
+        for i in 1...10 {
+            urls.append("https://picsum.photos/id/237/200/300")
+        }
+        return Observable.just(urls)
     }
 }
