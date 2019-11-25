@@ -8,7 +8,7 @@ import RxSwift
 import UIKit
 
 class LoadImageUseCase {
-    let imageLoader: ImageLoader
+    private let imageLoader: ImageLoader
 
     init(imageLoader: ImageLoader) {
         self.imageLoader = imageLoader

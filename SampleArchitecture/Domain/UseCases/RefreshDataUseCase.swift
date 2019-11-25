@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 class RefreshDataUseCase {
-    let userService: UserService
+    private let userService: UserService
 
     init(userService: UserService) {
         self.userService = userService

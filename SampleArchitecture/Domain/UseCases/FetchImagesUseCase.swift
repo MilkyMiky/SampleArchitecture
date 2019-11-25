@@ -8,7 +8,7 @@ import RxSwift
 
 class FetchImagesUseCase {
 
-    let imageRepository: ImageRepository
+    private let imageRepository: ImageRepository
 
     init(imageRepository: ImageRepository) {
         self.imageRepository = imageRepository

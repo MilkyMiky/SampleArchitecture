@@ -42,6 +42,8 @@ class AppContainer {
             )
         }
         container.register(ImageLoader.self){ _ in NukeImageLoader()}
+
+        container.register(UserCredentialsService.self){ _ in KeyChainService()}
     }
 
     private func registerDomainDependencies() {
@@ -65,6 +67,9 @@ class AppContainer {
         }
         container.register(FetchImagesUseCase.self) { resolver in
             FetchImagesUseCase(imageRepository: resolver.resolve(ImageRepository.self)!)
+        }
+        container.register(LoginUseCase.self) { resolver in
+            LoginUseCase(userCredentialsService: resolver.resolve(UserCredentialsService.self)!)
         }
     }
 
@@ -92,6 +97,12 @@ class AppContainer {
                     router: resolver.resolve(Router.self)!
             )
         }
+        container.register(LoginViewModel.self) { resolver in
+            LoginViewModel(
+                    loginUseCase: resolver.resolve(LoginUseCase.self)!,
+                    router: resolver.resolve(Router.self)!
+            )
+        }
 
         //        MARK: ViewControllers
         container.storyboardInitCompleted(UserDataListViewController.self) { (container, viewController) in
@@ -102,6 +113,9 @@ class AppContainer {
         }
         container.storyboardInitCompleted(ImageListViewController.self) { (container, viewController) in
             viewController.viewModel = container.resolve(ImageListViewModel.self)
+        }
+        container.storyboardInitCompleted(LoginViewController.self) { (container, viewController) in
+            viewController.viewModel = container.resolve(LoginViewModel.self)
         }
     }
 }

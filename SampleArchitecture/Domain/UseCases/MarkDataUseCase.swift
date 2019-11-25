@@ -7,7 +7,7 @@ import Foundation
 import RxSwift
 
 class MarkDataUseCase {
-    let userService: UserService
+    private let userService: UserService
 
     init(userService: UserService) {
         self.userService = userService
