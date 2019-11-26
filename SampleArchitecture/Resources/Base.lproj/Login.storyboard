@@ -20,9 +20,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eml-PC-j8T">
+                                <rect key="frame" x="188" y="834" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginClicked:" destination="p2o-Zg-Gnz" eventType="touchUpInside" id="Y2X-JF-PAK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eml-PC-j8T" secondAttribute="bottom" constant="32" id="35i-T9-TV3"/>
+                            <constraint firstItem="eml-PC-j8T" firstAttribute="centerX" secondItem="FAb-dp-g5N" secondAttribute="centerX" id="Jnj-5a-YbV"/>
                             <constraint firstItem="Ltw-NP-z5z" firstAttribute="leading" secondItem="4O0-jJ-8g0" secondAttribute="leading" constant="16" id="OP0-c6-iLx"/>
                             <constraint firstItem="4O0-jJ-8g0" firstAttribute="trailing" secondItem="Ltw-NP-z5z" secondAttribute="trailing" constant="16" id="QZc-Q3-Tfn"/>
                             <constraint firstItem="Ltw-NP-z5z" firstAttribute="centerY" secondItem="FAb-dp-g5N" secondAttribute="centerY" id="XXa-ue-2ng"/>

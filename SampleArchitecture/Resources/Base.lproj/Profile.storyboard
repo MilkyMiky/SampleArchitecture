@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hID-Pc-lQ3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="KVv-ws-oet">
+            <objects>
+                <viewController id="ENF-a2-J3H" customClass="ProfileViewController" customModule="SampleArchitecture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BVG-fs-b9g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odh-Gw-Ptc">
+                                <rect key="frame" x="167" y="731" width="80" height="34"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="ENF-a2-J3H" eventType="touchUpInside" id="OZV-ou-hoh"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KXu-Sj-UxI">
+                                <rect key="frame" x="147" y="120.5" width="120" height="119.5"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Gtf-Xb-ZEl"/>
+                                    <constraint firstAttribute="width" constant="120" id="Ykd-Xv-972"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bsE-dA-5ub" firstAttribute="bottom" secondItem="Odh-Gw-Ptc" secondAttribute="bottom" constant="48" id="6Bl-FR-dHL"/>
+                            <constraint firstItem="KXu-Sj-UxI" firstAttribute="centerX" secondItem="BVG-fs-b9g" secondAttribute="centerX" id="msf-Jm-D8Z"/>
+                            <constraint firstItem="KXu-Sj-UxI" firstAttribute="top" secondItem="bsE-dA-5ub" secondAttribute="top" constant="32" id="njB-wP-8Dx"/>
+                            <constraint firstItem="Odh-Gw-Ptc" firstAttribute="centerX" secondItem="BVG-fs-b9g" secondAttribute="centerX" id="tgk-gp-fTy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bsE-dA-5ub"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="0oN-vF-YGu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1KM-DE-cLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997.10144927536237" y="-151.33928571428569"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="pvu-mq-0ft">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hID-Pc-lQ3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="Qko-05-BRQ"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fKL-9E-f3j">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ENF-a2-J3H" kind="relationship" relationship="rootViewController" id="EgA-bf-FqS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DVK-qF-9XI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.956521739130437" y="-151.33928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.circle" catalog="system" width="64" height="62"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
+    </resources>
+</document>

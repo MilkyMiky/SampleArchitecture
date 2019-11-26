@@ -9,7 +9,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="dTT-JD-wTv">
             <objects>
-                <tabBarController id="kvp-rw-L3c" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarVC" id="kvp-rw-L3c" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IRU-LE-bA4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -18,11 +18,22 @@
                     <connections>
                         <segue destination="l9A-lx-oaS" kind="relationship" relationship="viewControllers" id="3di-qa-E0f"/>
                         <segue destination="yQf-zm-e4e" kind="relationship" relationship="viewControllers" id="gU6-j7-sDy"/>
+                        <segue destination="shv-hI-n0o" kind="relationship" relationship="viewControllers" id="6Af-ir-CFm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mva-l8-tqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-612" y="-26"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="K7v-ga-pr8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="shv-hI-n0o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vG6-1X-OPB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6l-nk-f1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77" y="-258"/>
         </scene>
         <!--Images-->
         <scene sceneID="Dnf-9R-8bZ">

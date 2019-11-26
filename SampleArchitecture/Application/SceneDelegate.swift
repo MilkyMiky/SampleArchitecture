@@ -16,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let keychainService = KeyChainService()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+
         keychainService.getUserCredentials()
                 .subscribe(
                         onSuccess: { creds in self.instantiateFlow(scene: scene, storyboard: AppStoryboard.Main) },

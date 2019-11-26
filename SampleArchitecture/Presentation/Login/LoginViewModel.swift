@@ -15,11 +15,11 @@ class LoginViewModel {
         self.router = router
     }
 
-    func login() {
-        print("login")
+    func login(vc: LoginViewController) {
         loginUseCase.execute(userCredentials: UserCredentials(login: "login", password: "pswd"))
-                .do(onCompleted: { print("ok")})
-        .subscribe()
-
+                .do(onCompleted: {
+                    self.router.openMainViewController(viewController: vc)
+                })
+                .subscribe()
     }
 }

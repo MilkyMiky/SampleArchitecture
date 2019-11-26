@@ -9,9 +9,8 @@ import SwinjectStoryboard
 class AppContainer {
     private let remoteUserRepository = "RemoteUserRepository"
     private let realmUserRepository = "RealmUserRepository"
-
-    static let instance = AppContainer()
     let container = Container()
+    static let instance = AppContainer()
 
     private init() {
         Container.loggingFunction = nil
@@ -71,6 +70,9 @@ class AppContainer {
         container.register(LoginUseCase.self) { resolver in
             LoginUseCase(userCredentialsService: resolver.resolve(UserCredentialsService.self)!)
         }
+        container.register(LogoutUseCase.self) { resolver in
+            LogoutUseCase(userCredentialsService: resolver.resolve(UserCredentialsService.self)!)
+        }
     }
 
     private func registerPresentationDependencies() {
@@ -104,6 +106,13 @@ class AppContainer {
             )
         }
 
+        container.register(ProfileViewModel.self) { resolver in
+            ProfileViewModel(
+                    logoutUseCase: resolver.resolve(LogoutUseCase.self)!,
+                    router: resolver.resolve(Router.self)!
+            )
+        }
+
         //        MARK: ViewControllers
         container.storyboardInitCompleted(UserDataListViewController.self) { (container, viewController) in
             viewController.viewModel = container.resolve(UserDataListViewModel.self)
@@ -116,6 +125,9 @@ class AppContainer {
         }
         container.storyboardInitCompleted(LoginViewController.self) { (container, viewController) in
             viewController.viewModel = container.resolve(LoginViewModel.self)
+        }
+        container.storyboardInitCompleted(ProfileViewController.self) { (container, viewController) in
+            viewController.viewModel = container.resolve(ProfileViewModel.self)
         }
     }
 }
